@@ -300,6 +300,8 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,addre
 
   #columns{
     -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
   }
 
   .sidebar--bottom__nav{ 
@@ -315,6 +317,8 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,addre
 @media only screen and (max-width: 480px) { 
   #columns{
     -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
   }  
   .sidebar{ 
     width:100%;
