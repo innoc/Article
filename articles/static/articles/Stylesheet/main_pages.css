@@ -1,0 +1,35 @@
+.main-content__article-header {
+  border-bottom: 1px solid lightblue;
+  padding: 5px 5px;
+  height: 55px;
+  background-color:white;
+}
+
+.article-header--bottom{ 
+  margin-top: 5px;
+  padding-left: 4px;
+}
+
+.article-image {
+  background-color: white
+}
+
+.article-body{ 
+  border: 1px solid lightblue;
+  min-height: 40%;
+  background-color: white;
+  padding: 1%;
+  background:white;
+}
+
+.article-body--right img{ 
+  height:auto;
+}
+
+.article_collection--container{ 
+  margin-top:2%;
+}
+
+.article_collection--container p { 
+  margin-top:1%;
+}

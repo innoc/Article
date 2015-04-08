@@ -1,0 +1,24 @@
+<div class="fotter">
+  <div class="footer__top">
+    <div class="footer__top--right">
+      <img src="../../static/articles/images/scroll.png",  height="100%" width="100%">
+    </div>
+    <div class="footer__top--left">
+      <h2>
+        What to read next
+      </h2>
+    </div>
+  </div>
+  <div id="columns">
+   {%for random_article in random_articles%}
+      <div class="article_unit">
+        <div class="article_unit--top">
+          <img src=" {{random_article.hero_image.url}}">
+        </div>
+        <div class="article_unit--bottom ">
+          <a href="{% url 'detail' random_article.id %}">{{random_article.title}}</a>
+        </div>
+      </div>
+    {%endfor%}
+  </div>
+</div>

@@ -1,0 +1,61 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'articles/stylesheet/main_pages.css'%}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'articles/stylesheet/responsive.css'%}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'articles/stylesheet/page_snippet.css'%}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'articles/stylesheet/general.css'%}"/>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Articles</title>
+  </head>
+
+  <body>
+    <div class="container12 alpha omega"%>
+      <div class="row">  
+        {% include "articles/sidebar.html" %}   
+        <div class="column8">
+          {%if article_review%}        
+            <div class="main-content__article-header">
+              <h2>
+                {{article_review.title}}
+              </h2>
+              <div class="article-header--bottom small-grey-font">
+                {{article_review.publication_date}} | <a href="/articles/{{ article_review.id }}/">{{ article_review.author }}</a>
+              </div>
+            </div>
+            <div class="article-image">
+              <img src=" {{article_review.hero_image.url}}",  height="100%" width="100%">
+            </div>
+            <div class="article-body primary-font">
+              {{article_review.body_text}}              
+              {%if article_collection%}                
+                {% for articles in article_collection %}
+                  <div class="article_collection--container">
+                    <div class="article-collection--counter">
+                      {{forloop.counter}}
+                    </div>
+                    <div class="article-collection--body">
+                      <h3>
+                        {{articles.title}}
+                      </h3>
+                      {{articles.body_text}}
+                      <p>
+                        <a href="{% url 'detail' articles.id %}">Call to action</a>
+                      </p>
+                    </div>
+                  </div>                  
+                {%endfor%}
+              {%endif%}
+            </div>
+          {%else%}
+            <p>No articles are available</p>
+          {%endif%}
+          {% load article_tag %}
+          {% generate_random_article %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

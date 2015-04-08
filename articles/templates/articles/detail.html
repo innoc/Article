@@ -1,0 +1,48 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'articles/stylesheet/main_pages.css'%}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'articles/stylesheet/responsive.css'%}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'articles/stylesheet/page_snippet.css'%}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'articles/stylesheet/general.css'%}"/>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Articles</title>
+  </head>
+
+  <body>
+    <div class="container12 alpha omega"%>
+      <div class="row">  
+        {% include "articles/sidebar.html"%}   
+        <div class="column8">
+          {%if article%}        
+            <div class="main-content__article-header">
+              <h2>
+                {{article.title}}
+              </h2>
+              <div class="article-header--bottom small-grey-font">
+                {{article.publication_date}} | <a href="/articles/{{ article_review.id }}/">{{ article.author }}</a>
+              </div>
+            </div>
+            <div class="article-image">
+              <img src="{{article.hero_image.url}}",  height="100%" width="100%">
+            </div>
+            <div class="article-body">
+              <div class="article-body--right primary-font">
+                <img src="{{article.additional_image.url}}",  height="100%" width="100%">     
+              </div>
+              <div class="article-body--left primary-font">
+                {{article.body_text}}        
+              </div>
+            </div>
+          {%else%}
+            <p>No articles are available</p>
+          {%endif%}
+          {% load article_tag %}
+          {% generate_random_article %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

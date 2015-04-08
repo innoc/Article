@@ -1,0 +1,35 @@
+body{ 
+  background-image: url("../images/noise.png");
+  background-color:#eeeeee;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;   
+  padding: 0
+}
+
+a{ 
+  text-decoration: none;
+  color: #2b6cc2;
+  font-size: small;
+}
+
+a:hover{ 
+  text-decoration: underline;
+}
+
+.container{
+  width: 960px;
+  margin: auto;
+  padding-top: 5%;
+}
+
+.small-grey-font{ 
+  color:grey;
+  font-size: small;
+}
+
+.primary-font{ 
+  font-size: 15px;
+}
